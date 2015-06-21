@@ -32,14 +32,16 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
-  # used $ to get elements
+  ## used $ to get elements
   inverse <- x$getinverse()
   
+  ##if the mean is not null then cacheinverve will calculate inverse matrix, return will skip all the code
   if(!is.null(inverse)) {
     message("getting cached data")
     return(inverse)
   }
   
+  ## if the mean is null, retreive the get function from input vector
   matrixdata <- x$get()
   
   ## solved the inverse
